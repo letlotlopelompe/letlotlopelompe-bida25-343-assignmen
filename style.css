@@ -1,0 +1,913 @@
+body {
+    margin: 0;
+    background-color: #000;
+}
+
+/* NAVBAR */
+.navbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 16px 0;
+    z-index: 100;
+}
+
+.navbar .container {
+    min-height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 100%;
+    padding: 0 40px;
+}
+
+.nav-left,
+.nav-right {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.nav-left a,
+.nav-center a,
+.nav-right a {
+    text-decoration: none;
+    color: white;
+}
+
+.nav-center a {
+    font-size: 18px;
+    letter-spacing: 3px;
+    font-weight: 700;
+}
+
+.nav-left a,
+.nav-right a {
+    font-size: 15px;
+    letter-spacing: 0.5px;
+    font-weight: 500;
+}
+
+.concierge-btn {
+    padding: 8px 18px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background: transparent;
+    color: white;
+    font-size: 14px;
+    letter-spacing: 1px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.concierge-btn:hover {
+    border-color: white;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+/* NAVBAR REGIONS DROPDOWN */
+.nav-dropdown {
+    position: relative;
+}
+
+.regions-dropdown {
+    position: absolute;
+    top: 110%;
+    left: 0;
+    min-width: 240px;
+    max-width: 260px;
+    background: rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 14px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    z-index: 999;
+    opacity: 0;
+    transform: translateY(10px);
+    pointer-events: none;
+    visibility: hidden;
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+}
+
+.regions-dropdown.active {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+    visibility: visible;
+}
+
+.region-option {
+    appearance: none;
+    background: transparent;
+    border: none;
+    padding: 0;
+    text-align: left;
+    color: white;
+    font-size: 15px;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    opacity: 0.8;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.region-option:hover {
+    opacity: 1;
+    transform: translateX(4px);
+}
+
+.countries-list {
+    display: none;
+    flex-direction: column;
+    gap: 0;
+    margin-top: 8px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding-top: 10px;
+}
+
+.countries-list.active {
+    display: flex;
+}
+
+.country-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.country-item img {
+    width: 24px;
+    height: 16px;
+    object-fit: cover;
+    border-radius: 2px;
+    flex-shrink: 0;
+}
+
+.country-item span {
+    color: white;
+    font-size: 14px;
+    letter-spacing: 0.4px;
+}
+
+.arrow {
+    margin-left: auto;
+    opacity: 0.5;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.country-item:hover .arrow {
+    transform: translateX(6px);
+    opacity: 1;
+}
+
+.country-item:hover {
+    padding-left: 4px;
+}
+
+/* HERO */
+.hero {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.hero-media {
+    position: absolute;
+    inset: 0;
+}
+
+.hero-slide,
+.hero-video,
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+}
+
+.hero-slide {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0;
+    transform: scale(1.02);
+    transition: opacity 1.4s ease, transform 6s ease;
+}
+
+.hero-slide.active {
+    opacity: 1;
+    transform: scale(1.08);
+}
+
+.hero-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1.2s ease;
+}
+
+.hero-overlay {
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+ .hero-content {
+    position: relative;
+    z-index: 2;
+    color: white;
+    padding-left: 60px;
+    max-width: 700px;
+    padding-top: 260px;
+}
+.hero-content h1 {
+
+    font-size: 56px;
+
+    font-weight: 700;
+
+    margin: 0 0 20px 0;
+}
+
+
+
+
+.hero-content p {
+
+    font-size: 18px;
+
+    line-height: 1.6;
+
+    margin: 0;
+}
+
+
+#hero-subtext {
+    opacity: 1;
+    transition: opacity 0.5s ease;
+}
+
+.hero-indicators {
+    position: absolute;
+    left: 60px;
+    bottom: 40px;
+    z-index: 2;
+    display: flex;
+    gap: 8px;
+}
+
+.indicator {
+    position: relative;
+    width: 18px;
+    height: 6px;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background: transparent;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.indicator.active {
+    background: white;
+    transform: scale(1.25);
+    border-color: white;
+}
+
+.video-indicator {
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.video-indicator.active {
+    background: white;
+    transform: scale(1.4);
+    opacity: 0.9;
+}
+
+/* REGION PAGE HERO */
+.region-hero {
+    position: relative;
+    height: 75vh;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: end;
+    padding: 0 60px 60px;
+}
+
+.region-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+}
+
+.region-hero-content {
+    position: relative;
+    z-index: 2;
+    color: white;
+    max-width: 700px;
+}
+
+.region-label {
+    font-size: 14px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    opacity: 0.75;
+    margin-bottom: 12px;
+}
+
+.region-hero-content h1 {
+    font-size: 64px;
+    margin: 0 0 18px 0;
+    font-weight: 700;
+}
+
+.region-description {
+    font-size: 18px;
+    line-height: 1.7;
+    max-width: 620px;
+    margin: 0;
+    opacity: 0.9;
+}
+
+/* COUNTRY GRID */
+.country-grid-section {
+    background: #000;
+    padding: 70px 40px 100px;
+}
+
+.country-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.country-card {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding: 24px;
+    text-decoration: none;
+    color: white;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: all 0.3s ease;
+}
+
+.country-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(255, 255, 255, 0.18);
+    background: rgba(255, 255, 255, 0.04);
+}
+
+.country-card img {
+    width: 34px;
+    height: 22px;
+    object-fit: cover;
+    border-radius: 2px;
+    flex-shrink: 0;
+}
+
+.country-card-text h2 {
+    margin: 0 0 6px 0;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.country-card-text p {
+    margin: 0;
+    font-size: 14px;
+    opacity: 0.75;
+    line-height: 1.5;
+}
+
+.country-arrow {
+    margin-left: auto;
+    font-size: 20px;
+    opacity: 0.5;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.country-card:hover .country-arrow {
+    transform: translateX(6px);
+    opacity: 1;
+}
+
+.sound-toggle {
+    position: absolute;
+    bottom: 24px;
+    right: 24px;
+    z-index: 20;
+
+    width: 62px;
+    height: 62px;
+
+    border: none;
+    outline: none;
+    border-radius: 50%;
+
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(18px);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+    overflow: hidden;
+
+    transition: all 0.35s ease;
+    box-shadow: 0 0 25px rgba(255,255,255,0.06),
+    inset 0 0 12px rgba(255,255,255,0.04);
+}
+
+.sound-toggle:hover {
+    transform: scale(1.08);
+    background: rgba(255,255,255,0.14);
+}
+
+.sound-toggle.active {
+    background: rgba(255,255,255,0.18);
+}
+
+.sound-icon {
+    position: relative;
+    z-index: 2;
+
+    color: white;
+    font-size: 1.1rem;
+    opacity: 0.92;
+}
+
+.sound-glow {
+    position: absolute;
+    inset: 0;
+
+    background: radial-gradient(
+        circle,
+        rgba(255,255,255,0.16),
+        transparent 70%
+    );
+
+    opacity: 0;
+    transition: opacity 0.35s ease;
+}
+
+.sound-toggle:hover .sound-glow {
+    opacity: 1;
+}
+/* =========================
+   COLLECTIONS PAGE
+========================= */
+
+.collections-page {
+
+    margin: 0;
+
+    background:
+    radial-gradient(
+        circle at top,
+        rgba(20,20,20,0.95),
+        #050505 70%
+    );
+
+    font-family: Arial, sans-serif;
+}
+
+
+
+/* =========================
+   COLLECTIONS HERO
+========================= */
+
+.collections-hero {
+
+    height: 62vh;
+
+    background:
+    linear-gradient(
+        rgba(0,0,0,0.68),
+        rgba(0,0,0,0.85)
+    ),
+    url('resources/images/hero-bg.jpg');
+
+    background-size: cover;
+
+    background-position: center;
+
+    position: relative;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    overflow: hidden;
+
+    padding: 0 20px;
+}
+
+
+
+.hero-overlay {
+
+    position: absolute;
+
+    inset: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================
+   REGION SECTION
+========================= */
+
+.region-section {
+
+    padding: 55px 8%;
+}
+
+
+
+.region-title {
+
+    color: white;
+
+    font-size: 18px;
+
+    letter-spacing: 4px;
+
+    text-transform: uppercase;
+
+    margin-bottom: 35px;
+
+    opacity: 0.9;
+
+    text-align: center;
+}
+
+
+
+/* =========================
+   CARS CONTAINER
+========================= */
+
+.cars-container {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 18px;
+
+    align-items: center;
+}
+
+
+
+/* =========================
+   CAR CARD
+========================= */
+
+.car-card {
+
+    width: 100%;
+
+    max-width: 920px;
+
+    min-height: 160px;
+
+    background: rgba(255,255,255,0.025);
+
+    border: 1px solid rgba(255,255,255,0.06);
+
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 22px;
+
+    padding: 14px;
+
+    transition: 0.3s ease;
+}
+
+
+
+.car-card:hover {
+
+    transform: translateY(-4px);
+
+    border-color: rgba(255,255,255,0.18);
+
+    background: rgba(255,255,255,0.04);
+}
+
+
+
+/* =========================
+   CAR IMAGE
+========================= */
+
+.car-card img {
+
+    width: 270px;
+
+    height: 150px;
+
+    object-fit: cover;
+
+    border-radius: 12px;
+
+    flex-shrink: 0;
+}
+
+
+/* =========================
+   CAR INFO
+========================= */
+
+.car-info {
+
+    flex: 1;
+}
+
+
+
+.car-info h3 {
+
+    color: white;
+
+    font-size: 22px;
+
+    margin-bottom: 8px;
+
+    font-weight: 600;
+}
+
+
+.car-info p {
+
+    color: #bdbdbd;
+
+    margin-bottom: 18px;
+
+    line-height: 1.7;
+
+    font-size: 16px;
+}
+
+
+
+.car-info span {
+
+    display: block;
+
+    color: white;
+
+    opacity: 0.92;
+
+    font-size: 16px;
+
+    font-weight: 600;
+
+    margin-bottom: 16px;
+}
+
+
+/* =========================
+   CONCIERGE BUTTON
+========================= */
+
+.concierge-btn {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 10px 20px;
+
+    border-radius: 999px;
+
+    text-decoration: none;
+
+    color: white;
+
+    font-size: 13px;
+
+    letter-spacing: 1px;
+
+    border: 1px solid rgba(255,255,255,0.1);
+
+    background: rgba(255,255,255,0.03);
+
+    transition: 0.3s ease;
+}
+
+
+
+.concierge-btn:hover {
+
+    background: rgba(255,255,255,0.08);
+
+    border-color: rgba(255,255,255,0.25);
+}
+
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+
+    .car-card {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+    .car-card img {
+
+        width: 100%;
+
+        height: 240px;
+    }
+
+  .hero-content h1 {
+
+    font-size: clamp(58px, 8vw, 120px);
+
+    font-weight: 700;
+
+    margin-bottom: 18px;
+
+    letter-spacing: 1px;
+}
+
+    .car-info h3 {
+
+        font-size: 32px;
+    }
+}
+.collections-hero .hero-content {
+
+    position: relative;
+
+    z-index: 2;
+
+    color: white;
+
+    text-align: center;
+
+    padding: 0;
+
+    max-width: 900px;
+}
+
+.collections-hero .hero-content h1 {
+
+    font-size: clamp(44px, 5vw, 82px);
+
+    font-weight: 600;
+
+    line-height: 1.05;
+
+    margin-bottom: 14px;
+
+    letter-spacing: -2px;
+}
+
+.collections-hero .hero-content p {
+
+    font-size: 15px;
+
+    color: rgba(255,255,255,0.72);
+
+    max-width: 620px;
+
+    line-height: 1.8;
+
+    margin: auto;
+}
+.concierge-page {
+
+    margin: 0;
+
+    background: #050505;
+
+    font-family: Arial, sans-serif;
+
+    color: white;
+}
+
+.concierge-section {
+
+    min-height: 100vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 40px;
+}
+
+.concierge-section h1 {
+
+    font-size: 58px;
+
+    margin-bottom: 12px;
+}
+
+.concierge-section p {
+
+    color: rgba(255,255,255,0.7);
+
+    margin-bottom: 40px;
+}
+
+.concierge-form {
+
+    width: 100%;
+
+    max-width: 580px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 18px;
+}
+
+.concierge-form input,
+.concierge-form textarea {
+
+    background: rgba(255,255,255,0.04);
+
+    border: 1px solid rgba(255,255,255,0.08);
+
+    border-radius: 12px;
+
+    padding: 18px;
+
+    color: white;
+
+    font-size: 15px;
+}
+
+.concierge-form textarea {
+
+    min-height: 140px;
+
+    resize: none;
+}
+
+.concierge-form button {
+
+    height: 56px;
+
+    border: none;
+
+    border-radius: 999px;
+
+    background: white;
+
+    color: black;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+.concierge-form button:hover {
+
+    opacity: 0.85;
+}

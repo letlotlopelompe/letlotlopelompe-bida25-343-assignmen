@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pharaoh Group</title>
+
+    <!-- Bootstrap -->
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    
+    <!-- Your CSS -->
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <!-- NAVBAR -->
+    <nav class="navbar">
+<div class="container">
+    <div class="nav-left">
+        <a href="#">Collection</a>
+
+<div class="nav-dropdown">
+<a href="#" id="regions-trigger">Regions</a>
+
+<div class="regions-dropdown" id="regions-dropdown">
+    <button type="button" class="region-option" id="europe-option">Europe</button>
+    <button type="button" class="region-option" id="asia-option">Asia</button>
+    <button type="button" class="region-option" id="america-option">America</button>
+
+    <div class="countries-list" id="europe-countries">
+        <a href="germany.html" class="country-item">
+            <img src="assets/images/germanflag.png" alt="Germany" />
+            <span>Germany</span>
+            <span class="arrow">→</span>
+        </a>
+
+        <a href="italy.html" class="country-item">
+            <img src="assets/images/italianflag.png" alt="Italy" />
+            <span>Italy</span>
+            <span class="arrow">→</span>
+        </a>
+         
+    </div>
+
+    <div class="countries-list" id="asia-countries">
+        <a href="asia.html" class="country-item">
+            <img src="assets/images/japaneseflag.png" alt="Japan" />
+            <span>Japan</span>
+            <span class="arrow">→</span>
+        </a>
+    </div>
+
+    <div class="countries-list" id="america-countries">
+        <a href="america.html" class="country-item">
+            <img src="assets/images/americanflag.png" alt="United States" />
+            <span>United States</span>
+            <span class="arrow">→</span>
+        </a>
+    </div>
+</div>
+</div>
+
+        <a href="#">Philosophy</a>
+    </div>
+
+    <div class="nav-center">
+        <a href="#">PHARAOH GROUP</a>
+    </div>
+
+    <div class="nav-right">
+        <a href="#">Showroom</a>
+        <a href="#" class="concierge-btn">Concierge</a>
+    </div>
+</div>
+</nav>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-media">
+            <div class="hero-slide active" style="background-image: url('germany.jpg');"></div>
+            <div class="hero-slide" style="background-image: url('italy.jpg');"></div>
+            <div class="hero-slide" style="background-image: url('japan.jpg');"></div>
+
+            <video class="hero-video" muted playsinline preload="auto">
+                <source src="headlights.mp4" type="video/mp4" />
+            </video>
+
+            <div class="hero-overlay"></div>
+        </div>
+
+        <div class="hero-content">
+            <h1>Where Rarity Meets Performance</h1>
+            <p id="hero-subtext">Private access. Reserved for a select few.</p>
+        </div>
+
+        <div class="hero-indicators">
+            <span class="indicator active"></span>
+            <span class="indicator"></span>
+            <span class="indicator"></span>
+            <span class="indicator video-indicator"></span>
+        </div>
+    </section>
+
+    <!-- Your JS -->
+    <script src="script.js"></script>
+</body>
+</html>
